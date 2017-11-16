@@ -1,7 +1,7 @@
 ---
 # tasks file for esp_test
 - name: include OS related var files
-  include_vars: "main.yml"
+  include_vars: "main-test.yml"
 
 - name: include tasks
   include: "StageCode.yml"
