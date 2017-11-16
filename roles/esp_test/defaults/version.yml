@@ -17,6 +17,8 @@
   set_fact: 
    versions: "/amow13/mow/web/docs/versions"
   when: env == "prod"
+- name: if environment is given incorrectly
+  debug: msg = "{{versions}} DOESN'T Exists .. please check the {{env}}... exiting now -------- >>>>>>>>"
 - debug: 
    msg: "Versions is {{versions}}"
 
