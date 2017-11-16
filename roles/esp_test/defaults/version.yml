@@ -3,6 +3,6 @@
   debug: msg="Hello from version page !!!!"
 - set_fact:
    versions: "/usr/local/web/sites/helium-dev/docs/versions"
-  when: {{env}} == "dev"
+  when: "{{env}} == "dev""
 
 
