@@ -24,7 +24,7 @@
    msg: "Versions is {{versions}}"
 - name: find number of file/folders
   find:
-   paths: "{{ versions }}"
+   paths: "/home/u27625"#"{{ versions }}"
   register: find_result
 - debug: 
    msg: "Versions count= {{find_result}}"
