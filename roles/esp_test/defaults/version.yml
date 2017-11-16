@@ -4,19 +4,19 @@
 - name: check environment for dev
   set_fact:
   versions: "/usr/local/web/sites/helium-dev/docs/versions"
-  when: {env}=="dev"
+  when: {{env}} == "dev"
 - name: check environment for uat
   set_fact:
   versions: "/usr/local/web/sites/helium-uat/docs/versions"
-  when: {env}=="uat"
+  when: {{env}} == "uat"
 - name: check environment for buat
   set_fact:
   versions: "/amow07/mow/web/docs/versions"
-  when: {env}=="buat"
+  when: {{env}} == "buat"
 - name: check environment for prod
   set_fact:
   versions: "/amow13/mow/web/docs/versions"
-  when: {env}=="prod"
+  when: {{env}} == "prod"
 - name: check the environment for testing..
   debug: msg = "Verions is"{{versions}}
 
