@@ -5,5 +5,5 @@
    versions: "/usr/local/web/sites/helium-dev/docs/versions"
   when: env == "dev"
 - debug: 
-   msg= "Versions is {{versions}}"
+   msg: "Versions is {{versions}}"
 
