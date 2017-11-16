@@ -2,9 +2,9 @@
 - name: Print message
   debug: msg="Hello from version page !!!!"
 - name: check environment for dev
-  set_fact:
+   set_fact:
     versions: "/usr/local/web/sites/helium-dev/docs/versions"
-  when: "{{env}}" == "dev"
+   when: "{{env}}" == "dev"
 - name: check environment for uat
   set_fact:
     versions: "/usr/local/web/sites/helium-uat/docs/versions"
