@@ -2,3 +2,4 @@
 # vars file for esp_test
 env: "dev"
 versions: ""
+date: "{{ ansible_date_time.date }}"
