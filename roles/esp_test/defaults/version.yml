@@ -5,6 +5,10 @@
   set_fact: 
    versions: "/usr/local/web/sites/helium-dev/docs/versions"
   when: env == "dev"
+- name: check environment for uat
+  set_fact: 
+   versions: "/usr/local/web/sites/helium-uat/docs/versions"
+  when: env == "uat"
 - debug: 
    msg: "Versions is {{versions}}"
 
