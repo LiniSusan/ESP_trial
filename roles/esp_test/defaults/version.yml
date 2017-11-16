@@ -27,5 +27,5 @@
    paths: "/home/u27625"#"{{ versions }}"
   register: find_result
 - debug: 
-   msg: "Versions count= {{find_result[examined]}}"
+   msg: "Versions count= {{find_result.examined}}"
 
