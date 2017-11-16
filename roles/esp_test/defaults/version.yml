@@ -24,8 +24,16 @@
    msg: "Versions is {{versions}}"
 - name: find number of file/folders
   find:
-   paths: "/home/u27625"#"{{ versions }}"
+   paths: "/home/u27625"#"{{ versions/datetotal }}"
   register: find_result
 - debug: 
    msg: "Versions count= {{find_result.examined}} +++++ {{date}}"
+- name: if count of files ==1
+  set_fact: 
+   dir: "code_from_cc_{{date}}"
+  when: find_result.examined == 1
+- name: if count of files >1
+  set_fact: 
+   dir: "code_from_cc_{{date}}_v{{find_result.examined}}"
+  when: find_result.examined > 1
 
