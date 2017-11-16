@@ -9,6 +9,14 @@
   set_fact: 
    versions: "/usr/local/web/sites/helium-uat/docs/versions"
   when: env == "uat"
+- name: check environment for buat
+  set_fact: 
+   versions: "/amow07/mow/web/docs/versions"
+  when: env == "buat"
+- name: check environment for prod
+  set_fact: 
+   versions: "/amow13/mow/web/docs/versions"
+  when: env == "prod"
 - debug: 
    msg: "Versions is {{versions}}"
 
