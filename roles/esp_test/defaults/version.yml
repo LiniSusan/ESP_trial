@@ -1,7 +1,8 @@
 ---
 - name: Print message
   debug: msg="Hello from version page !!!!"
-- set_fact: check env for dev
+- set_fact: 
+   name: check env for dev
    versions: "/usr/local/web/sites/helium-dev/docs/versions"
   when: env == "dev"
 - debug: 
