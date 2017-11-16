@@ -4,5 +4,7 @@
 - set_fact:
    versions: "/usr/local/web/sites/helium-dev/docs/versions"
   when: env == "dev"
+- name: check the environment for testing..
+  debug: msg = "Verions is"{{versions}}
 
 
