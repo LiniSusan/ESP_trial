@@ -3,4 +3,4 @@
 env: "dev"
 versions: ""
 date: "{{ ansible_date_time.date }}"
-host: "gdcp13204"
+host: "gdcb13204"
