@@ -1,0 +1,12 @@
+---
+- name: checking for host BUAT
+  set_fact:
+   env: "BUAT"
+  when: host == "gdcb13204"
+- name: checking for host PROD
+  set_fact:
+   env: "PROD"
+  when: host == "gdcb13392"
+- debug: 
+   msg: "env is {{env}}"
+  
