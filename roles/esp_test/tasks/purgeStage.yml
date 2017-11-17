@@ -1,0 +1,3 @@
+#write to log
+- name: include version
+  include: "defaults/version.yml"
