@@ -8,5 +8,4 @@
    env: "PROD"
   when: host == "gdcb13392"
 - debug: 
-   msg: "env is {{env}}"
-  
+   msg: "env is "env  
