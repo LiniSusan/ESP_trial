@@ -2,10 +2,12 @@
 - name: checking for host BUAT
   set_fact:
    env: "BUAT"
+   cacheable: true
   when: host == "gdcb13204"
 - name: checking for host PROD
   set_fact:
    env: "PROD"
+   cacheable: true
   when: host == "gdcb13392"
 - debug: 
    msg: "env is "env  
