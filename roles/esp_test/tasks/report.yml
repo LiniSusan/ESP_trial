@@ -9,3 +9,15 @@
   when: host == "gdcb13392"
 - debug: 
    msg: "env is {{env}}"  
+- name: setting subject for mail
+  set_fact:
+   suject: "ESP {{env}} Deployment Report {{date}}"
+- name: emailing reports
+  mail: 
+    host: 127.0.0.1
+    subject: "ESP {{env}} Deployment Report {{date}}"
+    to: lini.kurien@ust-global.com #tolist
+    cc: #cc list
+    attach: #log files path
+    charset: utf8
+  delegate_to: localhost
