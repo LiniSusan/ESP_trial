@@ -15,9 +15,12 @@
 - name: emailing reports
   mail: 
     host: 127.0.0.1
+    port: 25
+    from: susankoduvath@gmail.com
     subject: "ESP {{env}} Deployment Report {{date}}"
-    to: lini.kurien@ust-global.com #tolist
+    to: susankoduvath@gmail.com #tolist
     cc: #cc list
+    body: "Email body"    
     attach: #log files path
     charset: utf8
   delegate_to: localhost
