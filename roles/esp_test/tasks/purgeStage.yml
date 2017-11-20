@@ -5,7 +5,7 @@
   debug: msg="purging code under staging folder older than {{days}} days"
 - name: include version
   include: "defaults/version.yml"
-- name: finding files older than {{days}} days
+- name: finding folders older than {{days}} days
   find:
    paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
    patterns: 'code*'
@@ -15,3 +15,13 @@
    msg: "code result is {{code_result}} ..................... path is  {{code_result.files[0].path}} "
 - debug: msg="{{ code_result.files | sort(attribute='ctime') | map(attribute='path') | list }}"
 - copy: content="{{  code_result.files | sort(attribute='ctime') | map(attribute='path') | list  }}" dest="/tmp/temp_{{date}}"
+- name: finding working folders older than {{days}} days
+  find:
+   paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
+   patterns: 'code_from_cc*'
+   file_type: directory
+  register: code_result_1
+- debug:
+   msg: "code result is {{code_result_1}} ..................... path is  {{code_result_1.files[0].path}} "
+- debug: msg="{{ code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list }}"
+- copy: content="{{  code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list  }}" dest="/tmp/temp1_{{date}}"
