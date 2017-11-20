@@ -1,0 +1,7 @@
+#codever
+---
+- name: checking for type
+  set_fact:
+   var1: 1
+  when: type is defined
+  ignore_errors: yes
