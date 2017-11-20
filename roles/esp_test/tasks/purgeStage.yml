@@ -9,6 +9,7 @@
   find:
    paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
    patterns: 'code*'
+   file_type: directory
   register: code_result
 - debug:
    msg: "code result is {{code_result}} "
