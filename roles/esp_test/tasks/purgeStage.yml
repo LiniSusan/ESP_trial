@@ -14,3 +14,4 @@
 - debug:
    msg: "code result is {{code_result}} ..................... path is  {{code_result.files[0].path}} "
 - debug: msg="{{ code_result.files | sort(attribute='ctime') | map(attribute='path') | list }}"
+- copy: content="{{  code_result.files | sort(attribute='ctime') | map(attribute='path') | list  }}" dest="/tmp/temp_{{date}}"
