@@ -13,5 +13,5 @@
    patterns: 'code*'
    age: {{days}}
   register: code_result
- - debug:
-    msg: code_result
+- debug:
+   msg: code_result
