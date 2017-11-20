@@ -9,7 +9,7 @@
   find:
    paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs/versions" #{{version_docs}}
    patterns: 'code*'
-   age: days
+   age: 5
   register: code_result
 - debug:
    msg: code_result
