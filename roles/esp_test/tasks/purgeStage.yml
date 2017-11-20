@@ -7,7 +7,7 @@
   include: "defaults/version.yml"
 - name: finding files older than {{days}} days
   find:
-   paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs/versions" #{{version_docs}}
+   paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
    patterns: 'code*'
    age: 5
   register: code_result
