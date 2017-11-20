@@ -10,6 +10,7 @@
    paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
    patterns: 'code*'
    file_type: directory
+   #age: days
   register: code_result
 - debug:
    msg: "code result is {{code_result}} ..................... path is  {{code_result.files[0].path}} "
@@ -23,5 +24,7 @@
   register: code_result_1
 - debug:
    msg: "code result is {{code_result_1}} ..................... path is  {{code_result_1.files[0].path}} "
-- debug: msg="{{ code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list }}"
+- debug: msg="{{ code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list_1 }}"
 - copy: content="{{  code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list  }}" dest="/tmp/temp1_{{date}}"
+- debug: msg= "List = {{list_1}}"
+
