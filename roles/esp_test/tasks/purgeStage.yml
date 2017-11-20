@@ -1,7 +1,5 @@
 ---
 - name: Print message
-  debug: msg= hash
-- name: Print message
   debug: msg="-----------------Code Staging STARTING NOW -------------------------"
 - name: Print message
   debug: msg="purging code under staging folder older than {{days}} days"
