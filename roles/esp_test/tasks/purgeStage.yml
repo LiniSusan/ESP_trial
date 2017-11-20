@@ -1,6 +1,6 @@
 #write to log
 - name: Print message
-   debug: msg= "{{hash}}"
+   debug: msg= {{hash}}
 - name: Print message
    debug: msg="-----------------Code Staging STARTING NOW -------------------------"
 - name: Print message
