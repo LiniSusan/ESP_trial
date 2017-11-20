@@ -12,4 +12,4 @@
    age: 5
   register: code_result
 - debug:
-   msg: {{code_result}}
+   msg: "code result is {{code_result}} "
