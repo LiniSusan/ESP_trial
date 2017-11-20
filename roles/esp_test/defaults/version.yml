@@ -27,7 +27,7 @@
    paths: "/home/u27625"#"{{ versions/datetotal }}"
   register: find_result
 - debug: 
-   msg: "Versions count= {{find_result.3}} +++++ {{date}}"
+   msg: "Versions count= {{find_result.examined}} +++++ {{date}}"
 - name: if count of files ==1
   set_fact: 
    dir: "code_from_cc_{{date}}"
