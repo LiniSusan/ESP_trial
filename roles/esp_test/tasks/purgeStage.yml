@@ -12,4 +12,4 @@
    file_type: directory
   register: code_result
 - debug:
-   msg: "code result path is ................. {{code_result.files}} "
+   msg: "code result path is ................. {{code_result.files.path}} "
