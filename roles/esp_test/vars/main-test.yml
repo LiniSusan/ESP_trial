@@ -5,3 +5,6 @@ versions: ""
 date: "{{ ansible_date_time.date }}"
 host: "gdcb13204"
 hash: "#######################################################################"
+days: 5
+version_docs: "/usr/local/web/sites/helium-uat/docs"
+
