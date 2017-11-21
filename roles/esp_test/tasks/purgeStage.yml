@@ -5,6 +5,8 @@
   debug: msg="purging code under staging folder older than {{days}} days"
 - name: include version
   include: "defaults/version.yml"
+- name: finding link folders
+  shell: find /home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs -name 'code*' -exec ls -ltr {} \; | grep versions | awk '{print $11}'| tee -a /tmp/temp_{{date}}.txt
 - name: finding folders older than {{days}} days
   find:
    paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
