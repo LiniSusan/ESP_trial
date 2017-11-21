@@ -12,7 +12,7 @@
    paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
    patterns: 'code_from_cc*'
    file_type: directory
-   age: days
+#   age: days
   register: code_result
 - debug:
    msg: "code result is {{code_result}} ..................... path is  {{code_result.files[0].path}} "
