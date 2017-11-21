@@ -31,5 +31,5 @@
    dir_list: "{{  code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list  }}"
 - debug: msg="count =================== {{ count}} , {{dir_list}} "
 - name: Loop   
-  debug: var=item.stdout
+  debug: var=item
   with_indexed_items: "{{dir_list}}"
