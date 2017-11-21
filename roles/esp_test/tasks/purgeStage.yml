@@ -22,7 +22,7 @@
 - copy: content="{{ dir_list }}" dest="/tmp/temp1_{{date}}.txt"
 - name: checking each folder #msg="{{ item.0 }}" 
   shell: cat /tmp/temp_{{date}}.txt |grep -w item.0 | wc -l 
-   register: shell_out
+#   register: shell_out
   with_items:  
    - "{{dir_list}}"
 - debug: msg="{{shell_out}}"
