@@ -31,5 +31,4 @@
 - debug: msg="count =================== {{ count}} "
 - name: checking for using versions
    debug: msg = "this directory is used {{item}}"
-  with_item: 
-   - "{{  code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list  }}"
+  with_item: "{{  code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list  }}"
