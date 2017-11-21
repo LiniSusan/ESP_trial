@@ -32,4 +32,4 @@
 - debug: msg="count =================== {{ count}} , {{dir_list}} "
 - name: Loop   
   debug: var=item.stdout
-  with_item: "{{dir_list}}"
+  with_indexed_items: "{{dir_list}}"
