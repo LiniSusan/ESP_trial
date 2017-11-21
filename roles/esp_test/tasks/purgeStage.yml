@@ -18,7 +18,7 @@
    msg: "code result is {{code_result}} ..................... path is  {{code_result.files[0].path}} "
 - debug: msg="{{ code_result.files | sort(attribute='ctime') | map(attribute='path') | list }}"
 - set_fact:
-   dir_list: "{{  code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list  }}"
+   dir_list: "{{  code_result.files | sort(attribute='ctime') | map(attribute='path') | list  }}"
 - copy: content="{{ dir_list }}" dest="/tmp/temp1_{{date}}"
 
   
