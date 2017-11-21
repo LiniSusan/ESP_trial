@@ -21,10 +21,7 @@
    dir_list: "{{  code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list  }}"
 - copy: content="{{ dir_list }}" dest="/tmp/temp1_{{date}}"
 - name: checking each folder #msg="{{ item.0 }}" 
-  find: 
-   paths: "{{ item.0 }}"
-   file_type: directory
-  register: result_dir 
+  debug: msg="{{ item.0 }}" 
   with_items:  
    - "{{dir_list}}"
   
