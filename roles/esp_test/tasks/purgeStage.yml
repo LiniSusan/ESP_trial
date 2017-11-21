@@ -32,6 +32,6 @@
 - debug: msg="count =================== {{ count}} , {{dir_list}} "
 - name: Loop   
   debug: 
-   var=item[1]
+#   var=item[1]
    msg=item
   with_indexed_items: "{{dir_list}}"
