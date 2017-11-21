@@ -7,4 +7,13 @@
   include: "defaults/version.yml"
 - name: finding link folders
   shell: find /home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs -name 'code*' -exec ls -ltr {} \; | grep versions | awk '{print $11}'| tee -a /tmp/temp_{{date}}.txt
-
+- name: finding folders older than {{days}} days
+  find:
+   paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
+   patterns: 'code_from_cc*'
+   file_type: directory
+   age: days
+  register: code_result
+- debug:
+   msg: "code result is {{code_result}} ..................... path is  {{code_result.files[0].path}} "
+  
