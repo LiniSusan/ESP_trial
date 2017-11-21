@@ -25,4 +25,4 @@
 #   register: shell_out
   with_items:  
    - "{{dir_list}}"
-- debug: msg="{{shell_out}}"
+#- debug: msg="{{shell_out}}"
