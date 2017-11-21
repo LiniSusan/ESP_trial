@@ -26,5 +26,6 @@
    file_type: directory
   register: result_dir 
   debug: msg="{{result_dir}}"
-  with_items: "{{dir_list}}"
+  with_items:  
+   - "{{dir_list}}"
   
