@@ -32,6 +32,5 @@
 - debug: msg="count =================== {{ count}} , {{dir_list}} "
 - name: Loop   
   debug: 
-   var=item.stdout
-   msg=var
+   msg="{{item.stdout}}"
   with_item: list
