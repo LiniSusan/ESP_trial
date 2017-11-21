@@ -33,4 +33,4 @@
 - name: Loop   
   debug: 
    msg="{{item.stdout}}"
-  with_item: list
+  with_item: dir_list
