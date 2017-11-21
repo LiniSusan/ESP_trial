@@ -34,4 +34,4 @@
   debug: 
 #   var=item[1]
    msg=item
-  with_indexed_items: "{{dir_list}}"
+  with_items: "{{dir_list}}"
