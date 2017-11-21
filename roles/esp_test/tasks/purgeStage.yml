@@ -20,7 +20,7 @@
   find:
    paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
    patterns: 'code_from_cc*'
-   file_type: directory|link
+   file_type: directory
   register: code_result_1
 - debug:
    msg: "code result is {{code_result_1}} ..................... path is  {{code_result_1.files[0].path}} "
