@@ -24,5 +24,6 @@
   shell: cat /tmp/temp_{{date}}.txt |grep -w item.0 | wc -l >> count
   with_items:  
    - "{{dir_list}}"
+- debug: msg=count
 
   
