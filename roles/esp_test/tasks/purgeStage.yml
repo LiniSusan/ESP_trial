@@ -31,6 +31,10 @@
    dir_list: "{{  code_result_1.files | sort(attribute='ctime') | map(attribute='path') | list  }}"
 - debug: msg="count =================== {{ count}} , {{dir_list}} "
 #- name: Loop   
-- debug: #msg="{{ item.0 }}" 
+- name: checking each folder #msg="{{ item.0 }}" 
 #   var=item[1]
+  find: 
+   paths: "{{ item.0 }}"
+   file_type: directory
+  register: result_dir 
   with_items: "{{dir_list}}"
