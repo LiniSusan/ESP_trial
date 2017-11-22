@@ -23,6 +23,7 @@
 - name: checking each folder #msg="{{ item.0 }}" 
   shell: cat /tmp/temp_{{date}}.txt |grep -w item.0 | wc -l 
   register: shell_out
+  debug: msg="{{shell_out}}"
   with_items:  
    - "{{dir_list}}"
-- debug: msg="{{shell_out}}"
+
