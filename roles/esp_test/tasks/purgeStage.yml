@@ -23,7 +23,9 @@
 - name: checking each folder #msg="{{ item.0 }}" 
   shell: |
     count="$(cat /tmp/temp_{{date}}.txt |grep -w item.0 | wc -l )"
-    echo "${count}" 
+    echo "${count}" '
+  with_items:  
+   - "{{dir_list}}"
    
    
 
