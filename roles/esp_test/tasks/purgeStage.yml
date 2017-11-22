@@ -22,10 +22,8 @@
 - copy: content="{{ dir_list }}" dest="/tmp/temp1_{{date}}.txt"
 - name: checking each folder #msg="{{ item.0 }}" 
   shell: |
-   {% for dir in {{dir_list}}%}
-   count = cat /tmp/temp_{{date}}.txt |grep -w dir | wc -l
-   echo $count
-   {% endfor  %}
+    count="$(cat /tmp/temp_{{date}}.txt |grep -w item.0 | wc -l )"
+    echo "${count}" 
    
    
 
