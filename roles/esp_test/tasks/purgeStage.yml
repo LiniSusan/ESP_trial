@@ -1,12 +1,16 @@
 ---
 - name: Print message
   debug: msg="-----------------Code Staging STARTING NOW -------------------------"
+  
 - name: Print message
   debug: msg="purging code under staging folder older than {{days}} days"
+  
 - name: include version
   include: "defaults/version.yml"
+  
 - name: finding link folders
   shell: find /home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs -name 'code*' -exec ls -ltr {} \; | grep versions | awk '{print $11}'| tee -a /tmp/temp_{{date}}.txt
+  
 - name: finding folders older than {{days}} days
   find:
    paths: "/home/u27625/esp_folders/usr/local/web/sites/helium-dev/docs" #{{version_docs}}
@@ -14,12 +18,17 @@
    file_type: directory
 #   age: days
   register: code_result
+  
 - debug:
    msg: "code result is {{code_result}} ..................... path is  {{code_result.files[0].path}} "
+   
 - debug: msg="{{ code_result.files | sort(attribute='ctime') | map(attribute='path') | list }}"
+
 - set_fact:
    dir_list: "{{  code_result.files | sort(attribute='ctime') | map(attribute='path') | list  }}"
+   
 - copy: content="{{ dir_list }}" dest="/tmp/temp1_{{date}}.txt"
+
 - name: checking each folder #msg="{{ item.0 }}" 
   shell: |
     count="$(cat /tmp/temp_{{date}}.txt |grep -w {{item.0}} | wc -l )"
