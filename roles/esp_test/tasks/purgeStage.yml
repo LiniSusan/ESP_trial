@@ -34,6 +34,7 @@
     count="$(cat /tmp/temp_{{date}}.txt |grep -w {{item.0}} | wc -l )"
     echo "${count}" 
     if [ $(count) -eq 1 ]; then echo 1; fi 
+    #rm -Rrf {{item.0}}
   with_items:  
    - "{{dir_list}}"
    
