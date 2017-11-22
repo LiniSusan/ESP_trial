@@ -24,9 +24,7 @@
   shell: |
     count="$(cat /tmp/temp_{{date}}.txt |grep -w {{item.0}} | wc -l )"
     echo "${count}" 
-    if [[ $(count) = 1 ]]; then
-     rm -r {{item.0}}
-    fi 
+    if [[ $(count) = 1 ]]; then rm -r {{item.0}}  fi 
   with_items:  
    - "{{dir_list}}"
    
