@@ -7,4 +7,4 @@ host: "gdcb13204"
 hash: "#######################################################################"
 days: 5
 version_docs: "/usr/local/web/sites/helium-uat/docs"
-
+dev_versions: "/usr/local/web/sites/helium-dev/docs/versions"
