@@ -3,7 +3,7 @@
   debug: msg="Hello from version page !!!!"
 - name: check environment for dev
   set_fact: 
-   versions: "/usr/local/web/sites/helium-dev/docs/versions"
+   versions: dev_versions
   when: env == "dev"
 - name: check environment for uat
   set_fact: 
