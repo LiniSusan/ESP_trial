@@ -1,0 +1,13 @@
+---
+builders:
+- type: docker
+  image: centos
+  commit: 'true'
+provisioners:
+- type: shell
+  inline:
+  - yum -y update
+  - yum install epel-release -y
+  - yum install ansible -y
+- type: ansible-local
+  playbook_file: playbooks/local.yml
