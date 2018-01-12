@@ -1,0 +1,18 @@
+---
+builders:
+- type: amazon-ebs
+  communicator: ssh
+  ssh_username: "{{user `ssh_username`}}"
+  access_key: "{{user `access_key`}}"
+  secret_key: "{{user `secret_key`}}"
+  source_ami: "{{user `source_ami`}}"
+  instance_type: "{{user `instance_type`}}"
+  ami_name: "{{user `ami_name`}}"
+provisioners:
+- inline:
+  - yum -y update
+  - yum install epel-release -y
+  - yum install ansible -y
+  type: shell
+- playbook_file: playbooks/local.yml
+  type: ansible-local
