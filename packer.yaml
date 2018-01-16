@@ -1,0 +1,50 @@
+app:
+  app-code:
+  extended-appcode:
+  description: "dfd"
+
+# Path to any scripts should be under the current working directory
+# e.g 
+# vars:
+#   version: 1.2.1
+#
+# variable version can be referenced as follows
+# package-tab: {__VERSION__}
+#
+
+custom-vars:
+  version: 1.2.1
+
+release:
+  version: {__VERSION__}
+
+provisioner: &ansible
+  type: ansible
+  script-path: "./abcd.yaml"
+
+packager:
+ -
+  id: BAU
+  profile: NON-CLOUD
+  type: NON-CLOUD
+  description:
+  executor: cloud-bundler
+  script: "./../helloworld.exe"
+
+
+ -
+  id: containers
+  profile: packer
+  type: docker
+  description:
+  executor: packer
+  docker:
+   registry-url:
+   base-container:
+
+ -
+  id: cloud
+  profile: aws
+  type: aws
+  description: PACKAGE ami FOR aws cloud
+  executor: packer
