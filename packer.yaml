@@ -3,24 +3,14 @@ app:
   extended-appcode:
   description: "dfd"
 
-# Path to any scripts should be under the current working directory
-# e.g 
-# vars:
-#   version: 1.2.1
-#
-# variable version can be referenced as follows
-# package-tab: {__VERSION__}
-#
-
 custom-vars:
   version: 1.2.1
-
 release:
-  version: {__VERSION__}
+  version: {_VERSION_}
 
 provisioner: &ansible
   type: ansible
-  script-path: "./abcd.yaml"
+  script-path: "./playbooks/local.yml"
 
 packager:
  -
@@ -30,7 +20,6 @@ packager:
   description:
   executor: cloud-bundler
   script: "./../helloworld.exe"
-
 
  -
   id: containers
@@ -45,6 +34,6 @@ packager:
  -
   id: cloud
   profile: aws
-  type: aws
+  type: amazon-ebs
   description: PACKAGE ami FOR aws cloud
   executor: packer
