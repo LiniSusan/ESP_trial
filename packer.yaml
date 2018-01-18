@@ -2,6 +2,11 @@ app:
   app-code:
   extended-appcode:
   description: "dfd"
+  extra-vars:
+    app_name: "dps"
+    finapp_name: "fincad"
+    build_no: "55"
+    finbuild_no: "60"
 
 custom-vars:
   version: 1.2.1
