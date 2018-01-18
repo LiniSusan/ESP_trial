@@ -10,7 +10,7 @@ app:
 
 custom-vars:
   version: 1.2.1
-  rolePath: "playbooks/dps/roles/dps"
+  RolePath: "playbooks/dps/roles/dps"
 release:
   version: {_VERSION_}
 
