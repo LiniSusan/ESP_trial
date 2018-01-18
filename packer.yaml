@@ -9,7 +9,7 @@ release:
   version: {_VERSION_}
 
 provisioner: &ansible
-  type: ansible
+  type: ansible-local
   script-path: "./playbooks/local.yml"
 
 packager:
